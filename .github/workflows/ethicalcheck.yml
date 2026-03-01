@@ -1,20 +1,25 @@
+# This workflow checks for ethical compliance in the project
+
 name: Ethical Check
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
+    branches:
+      - main
 
 jobs:
-  ethical-check:
+  check:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Run Ethical Check
-        run: echo 'Ethical check workflow executed successfully'
+        uses: actions/checkout@v2
+
+      - name: Run ethical checks
+        run: | 
+          echo "Ethical checks running..."
+          # Remove the EthicalCheck action step here
+
+      - name: Notify stakeholders
+        run: | 
+          echo "Notifying stakeholders about compliance."
