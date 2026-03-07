@@ -16,28 +16,28 @@ We welcome contributions to improve our documentation! Here's how you can contri
     - Select where you want to fork the repository (your personal account or an organization)
 2. Clone your forked repository:
 
-    ```
+    ```sh
     git clone https://github.com/YOUR-USERNAME/docs.git
     cd docs
     ```
 
 3. Create a new branch for your changes:
 
-    ```
+    ```bash
     git checkout -b your-feature-branch
     ```
 
 4. Make your changes to the documentation
 5. Commit your changes:
 
-    ```
+    ```bash
     git add .
     git commit -m "Description of your changes"
     ```
 
 6. Push your changes to your fork:
 
-    ```
+    ```bash
     git push origin your-feature-branch
     ```
 
@@ -54,13 +54,13 @@ After forking and cloning the repository:
 
 1. Install dependencies:
 
-    ```
+    ```bash
     npm install
     ```
 
 2. Start the development server:
 
-    ```
+    ```bash
     npm start
     ```
 
