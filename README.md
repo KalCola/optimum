@@ -16,7 +16,7 @@ We welcome contributions to improve our documentation! Here's how you can contri
     - Select where you want to fork the repository (your personal account or an organization)
 2. Clone your forked repository:
 
-    ```bash
+    ```sh
     git clone https://github.com/YOUR-USERNAME/docs.git
     cd docs
     ```
