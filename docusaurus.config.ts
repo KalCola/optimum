@@ -12,21 +12,14 @@ const config: Config = {
 
   // Set the production url of your site here
   url: 'https:/docs.optimai.network/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'OptimaiNetwork', // Usually your GitHub org/user name.
-  projectName: 'OptimAI Network Docs', // Usually your repo name.
+  organizationName: 'OptimaiNetwork',
+  projectName: 'OptimAI Network Docs',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // removed top-level onBrokenMarkdownLinks from here
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -34,7 +27,12 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
+    hooks: {
+      // Migrate deprecated top-level option here:
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
+
   themes: ['@docusaurus/theme-mermaid'],
   plugins: [
     'docusaurus-plugin-sass',
@@ -56,12 +54,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          // routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/optimainetwork/docs/tree/main/',
         },
         theme: {
@@ -77,15 +72,8 @@ const config: Config = {
       appId: '21H8NIK27E',
       apiKey: '2764b00b42701493a032fe50aab6c8f4',
       indexName: 'optimai',
-
       contextualSearch: true,
       externalUrlRegex: 'external\\.com|domain\\.com',
-      // replaceSearchResultPathname: {
-      //   from: '/docs/', // or as RegExp: /\/docs\//
-      //   to: '/',
-      // },
-
-      // Optional: Algolia search parameters
       searchParameters: {},
       searchPagePath: 'search',
       insights: false,
